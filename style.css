@@ -13,7 +13,7 @@
     position: relative;
     align-items: center;
     justify-content: center;
-    background: url("./images/bg.jpg");
+    background: url("images/bg.jpg");
     background-size: cover;
     background-position: center;
 }
@@ -35,6 +35,7 @@
     max-width: 760px;
     text-align: center;
     position: relative;
+    margin-top: 50px;
 }
 
 .image-generator h1{
@@ -57,6 +58,7 @@
     align-items: center;
     justify-content: space-between;
     border-radius: 30px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
 .generate-form .prompt-input{
@@ -92,4 +94,109 @@
     cursor: pointer;
     border-radius: 30px;
     background: #4949E7;
+}
+
+.image-gallery{
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    padding: 0 15px;
+    max-width: 1250px;
+    margin: 50px auto;
+    justify-content: center;
+}
+
+.image-gallery .img-card{
+    width: 285px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    background: #f2f2f2;
+    /* margin-top: 30px; */
+}
+
+.image-gallery .img-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-gallery .img-card.loading img{
+    width: 80px;
+    height: 80px;
+}
+
+.image-gallery .img-card .download-btn {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    background: #fff;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-gallery .img-card:not(.loading):hover .download-btn {
+    display: flex;
+}
+
+.image-gallery .img-card .download-btn img{
+    width: 14px;
+    height: 14px;
+}
+
+@media screen and (max-width: 760px) {
+    .image-generator h1{
+        font-size: 1.8rem;
+    }
+
+    .image-generator p {
+        font-size: 1rem;
+    }
+
+    .image-generator .generate-form{
+        margin-top: 30px;
+        height: 52px;
+        display: block;
+    }
+
+    .generate-form .controls{
+        height: 40px;
+        margin-top: 15px;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .generate-form .img-quantity{
+        color: #fff;
+    }
+
+    .generate-form .img-quantity option{
+        color: #000;
+    }
+
+    .generate-form .generate-btn{
+        height: 100%;
+    }
+
+    .image-gallery .img-card:not(.loading) .download-btn{
+        display: flex;
+    }
+
+    .image-gallery{
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width: 550px){
+    .image-gallery .img-card{
+        width: 100%;
+    }
 }
